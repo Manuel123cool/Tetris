@@ -124,15 +124,14 @@ void Shapes::dropShape()
     {
         if (startMove)
         {
+            deletePositionShape(m_shapePosX, m_shapePosY);
             m_shapePosX = 4;
             m_currentShape = getRandomNumber(0, 6);
             m_currentState = 0;
             positoningShape(m_shapePosX, m_shapePosY);
             destroyIfRow();
-            deletePositionShape(m_shapePosX, m_shapePosY);
         }
         startMove = false;
-        positoningShape(m_shapePosX, m_shapePosY);
     }
     ++countFrames;
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
